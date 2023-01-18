@@ -20,6 +20,5 @@
                 <td>${product.createdAt}</td>
             </tr>
         </c:forEach>
-        
     </table>
 <%@ include file ="../layout/footer.jsp"%>

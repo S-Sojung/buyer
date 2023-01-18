@@ -12,6 +12,7 @@
 
         <body>
             <ul>
+            
             <!--if문 : 조건이 맞으면 when 아니면 otherwise-->
             <c:choose>
                <c:when test="${principal == null}">
@@ -26,7 +27,7 @@
                
                <c:otherwise>
                     <li><a href="/">홈</a></li>
-                    <li><a href="/purchase">구매목록</a></li> <!--내가 구매한게 걸려야함 나중에 다시 설정 -->
+                    <li><a href="/user/purchase">구매목록</a></li> <!--내가 구매한게 걸려야함 나중에 다시 설정 -->
                     <li><a href="/logout">로그아웃</a></li>
                </c:otherwise>
             </c:choose>
