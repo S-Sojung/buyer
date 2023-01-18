@@ -17,12 +17,15 @@ public interface UserRepository { // 만약 무슨 기능을 만들어야할 지
 
     public User findById(int id);
 
-    public int updateById(int id, String password);
+    // 한 건은 Param 을 붙이지 않아도 알아서 찾음
+    public int updateById(@Param("id") int id, @Param("password") String password);
 
     public int deleteById(int id);
     // public int insert(@Param("username") String username, @Param("password")
     // String password,
     // @Param("email") String email);
+
+    public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
 
     // public User login(@Param("username") String username, @Param("password")
     // String password);

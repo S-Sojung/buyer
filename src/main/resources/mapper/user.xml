@@ -5,6 +5,9 @@
 
 <mapper namespace="shop.mtcoding.buyer.model.UserRepository">
 
+    <select id="findByUsernameAndPassword" resultType="shop.mtcoding.buyer.model.User">
+        select * from user_tb where username=#{username} and password =#{password}
+    </select>
     <select id="findAll" resultType="shop.mtcoding.buyer.model.User">
         select * from user_tb 
     </select>
