@@ -11,13 +11,15 @@
             <th>재고</th>
             <th>등록일</th>
         </tr>
-        <tr>
-            <td>1</td> <!--톰캣이 알아서 스트링을 해석함. -->
-            <td> <a href="/product/1">바나나</a></td>
-            <td>1000 원</td>
-            <td>500 개</td>
-            <td>2023-01-18</td>
-        </tr>
+        <c:forEach items="${productList}" var="product">
+            <tr>
+                <td>${product.id}</td> <!--톰캣이 알아서 스트링을 해석함. -->
+                <td> <a href="/product/${product.id}">${product.name}</a></td>
+                <td>${product.price} 원</td>
+                <td>${product.qty} 개</td>
+                <td>${product.createdAt}</td>
+            </tr>
+        </c:forEach>
         
     </table>
 <%@ include file ="../layout/footer.jsp"%>
