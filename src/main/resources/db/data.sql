@@ -6,11 +6,11 @@ insert into product_tb(name, price, qty, created_at) values('바나나', 1000, 5
 insert into product_tb(name, price, qty, created_at) values('사과', 2000, 100, now());
 insert into product_tb(name, price, qty, created_at) values('딸기', 3000, 150, now());
 
-insert into purchase_tb(user_id, product_id, created_at) values(1, 1, now());
-insert into purchase_tb(user_id, product_id, created_at) values(1, 2, now());
-insert into purchase_tb(user_id, product_id, created_at) values(2, 1, now());
-insert into purchase_tb(user_id, product_id, created_at) values(2, 2, now());
-insert into purchase_tb(user_id, product_id, created_at) values(3, 1, now());
-insert into purchase_tb(user_id, product_id, created_at) values(3, 2, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(1, 1, 5, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(1, 2, 5, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(2, 1, 10, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(2, 2, 10, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(3, 1, 3, now());
+insert into purchase_tb(user_id, product_id, qty, created_at) values(3, 2, 3, now());
 
 commit;

@@ -15,6 +15,7 @@
                 <td>${purchase.id}</td> <!--톰캣이 알아서 스트링을 해석함. -->
                 <td>${purchase.user_id}</td>
                 <td>${purchase.product_id}</td>
+                <td>${purchase.qty}</td>
                 <td>${purchase.createdAt}</td>
             </tr>
         </c:forEach>

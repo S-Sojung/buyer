@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface PurchaseRepository {
-    public int insert(@Param("user_id") int userId, @Param("product_id") int productId);
+    public int insert(@Param("user_id") int userId, @Param("product_id") int productId, @Param("qty") int qty);
 
     public List<Purchase> findAll();
 
