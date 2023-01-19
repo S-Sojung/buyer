@@ -5,7 +5,7 @@
 
 <mapper namespace="shop.mtcoding.buyer.model.PurchaseRepository">
     <insert id ="insert">
-        insert into purchase_tb(user_id, product_id, qty, created_at) values(#{user_id},#{product_id},#{qty} now())
+        insert into purchase_tb(user_id, product_id, count, created_at) values(#{user_id},#{product_id},#{count} now())
     </insert>
 
     <select id ="findAll">

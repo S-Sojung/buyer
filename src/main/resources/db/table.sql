@@ -18,7 +18,7 @@ create table purchase_tb(
     id int auto_increment primary key,
     user_id int ,
     product_id int,
-    qty int not null,
+    count int not null,
     created_at timestamp,
     constraint fk_user foreign key (user_id) references user_tb (id),
     constraint fk_product foreign key (product_id) references product_tb (id)

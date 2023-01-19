@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import shop.mtcoding.buyer.model.Product;
 import shop.mtcoding.buyer.model.ProductRepository;
-import shop.mtcoding.buyer.model.Purchase;
 import shop.mtcoding.buyer.model.PurchaseRepository;
 import shop.mtcoding.buyer.model.User;
 
@@ -57,15 +56,4 @@ public class ProductController {
         }
     }
 
-    // 구매이력
-    @GetMapping("/user/purchase")
-    public String purchase(Model model) {
-        User user = (User) session.getAttribute("principal");
-        int userId = user.getId();
-        List<Purchase> purchaseList = purchaseRepository.findAll();
-        System.out.println(purchaseList);
-        model.addAttribute("purchaseList", purchaseList);
-
-        return "purchase/purchase";
-    }
 }
