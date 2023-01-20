@@ -39,8 +39,12 @@ public class PurchaseService {
         }
 
         // 4.->3 재고수량 변경
-        int result2 = productRepository.updateById(product.getId(), product.getName(), product.getPrice(),
+        int result2 = productRepository.updateById(
+                product.getId(),
+                product.getName(),
+                product.getPrice(),
                 product.getQty() - count);
+
         if (result2 != 1) {
             return -1;
         }

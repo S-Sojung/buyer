@@ -8,9 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Purchase {
-    private Integer id;
-    private Integer userId;
-    private Integer productId;
-    private Integer count;
+    private int id;
+    private int userId;
+    private int productId;
+    private int count;
     private Timestamp createdAt;
 }

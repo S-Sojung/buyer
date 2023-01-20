@@ -18,6 +18,4 @@ public interface PurchaseRepository {
 
     public int deleteById(int id);
 
-    public List<Purchase> findByUserId(@Param("userId") int user_id);
-
 }

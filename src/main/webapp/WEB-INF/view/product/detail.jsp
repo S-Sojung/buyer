@@ -23,7 +23,7 @@
 
         <c:if test="${principal != null}">
             <!-- <form action="/product/${product.id}/buy" method="post"> -->
-            <form action="/purcahse/insert" method="post">
+            <form action="/purchase/insert" method="post">
                 <!-- <input type="number" name="count" min="1" max="${product.qty}"> -->
                 <input type = "hidden" name="productId" value="${product.id}" /> 
                 <select name="count">

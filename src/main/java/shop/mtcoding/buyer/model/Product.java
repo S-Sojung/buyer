@@ -9,7 +9,7 @@ import shop.mtcoding.buyer.util.DateUtil;
 @Getter
 @Setter
 public class Product {
-    private Integer id;
+    private int id;
     private String name;
     private int price;
     private int qty;

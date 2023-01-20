@@ -42,6 +42,7 @@ public class PurchaseController {
         if (result == -1) {
             return "redirect:/notfound";
         }
+
         return "redirect:/";
     }
 }
