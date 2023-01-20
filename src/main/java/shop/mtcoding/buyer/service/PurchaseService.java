@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import shop.mtcoding.buyer.model.Product;
 import shop.mtcoding.buyer.model.ProductRepository;
+import shop.mtcoding.buyer.model.Purchase;
 import shop.mtcoding.buyer.model.PurchaseRepository;
 
 /*
@@ -65,4 +66,26 @@ public class PurchaseService {
 
         return 1;
     } // commit;
+
+    @Transactional
+    public int 구매취소하기(int purchaseId) {
+
+        Purchase purchase = purchaseRepository.findById(purchaseId);
+        Product p = productRepository.findById(purchase.getProductId());
+
+        // 구매이력 삭제하기
+        int result = purchaseRepository.deleteById(purchaseId);
+        if (result != 1) {
+            return -1;
+        }
+
+        // 재고 채워넣기
+        int result2 = productRepository.updateById(p.getId(), p.getName(), p.getPrice(),
+                p.getQty() + purchase.getCount());
+        if (result2 != 1) {
+            return -1;
+        }
+
+        return 1;
+    }
 }

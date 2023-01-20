@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
@@ -52,6 +53,17 @@ public class PurchaseController {
         }
 
         return "redirect:/";
+    }
+
+    @PostMapping("/purchase/{id}/delete")
+    public String delete(@PathVariable int id) {
+        /// purchase/${purchase.id}/delete
+        int result = purchaseService.구매취소하기(id);
+        if (result == -1) {
+            return "redirect:/notfound";
+        }
+
+        return "redirect:/purchase";
     }
 
     @GetMapping("/purchase")

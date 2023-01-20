@@ -9,8 +9,12 @@
 
     </insert>
 
-    <select id ="findAll">
+    <select id ="findAll" resultType="shop.mtcoding.buyer.model.Purchase">
         select * from purchase_tb 
+    </select>
+
+    <select id ="findById" resultType="shop.mtcoding.buyer.model.Purchase">
+        select * from purchase_tb where id = #{id}
     </select>
     
     <select id ="findByUserId" resultType="shop.mtcoding.buyer.dto.PurchaseAllDto">
@@ -25,5 +29,8 @@
         on pr.id = pu.product_id
 
     </select>
-
+    
+    <delete id ="deleteById">
+        delete from purchase_tb where id = #{id} 
+    </delete>
 </mapper>
