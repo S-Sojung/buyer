@@ -58,6 +58,7 @@ public class PurchaseController {
     @PostMapping("/purchase/{id}/delete")
     public String delete(@PathVariable int id) {
         /// purchase/${purchase.id}/delete
+
         int result = purchaseService.구매취소하기(id);
         if (result == -1) {
             return "redirect:/notfound";

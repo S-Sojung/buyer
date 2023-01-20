@@ -71,7 +71,13 @@ public class PurchaseService {
     public int 구매취소하기(int purchaseId) {
 
         Purchase purchase = purchaseRepository.findById(purchaseId);
+        if (purchase == null) {
+            return -1;
+        }
         Product p = productRepository.findById(purchase.getProductId());
+        if (p == null) {
+            return -1;
+        }
 
         // 구매이력 삭제하기
         int result = purchaseRepository.deleteById(purchaseId);
