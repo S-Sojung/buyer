@@ -1,14 +1,22 @@
 package shop.mtcoding.buyer.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
+import shop.mtcoding.buyer.dto.PurchaseAllDto;
 import shop.mtcoding.buyer.model.Product;
 import shop.mtcoding.buyer.model.ProductRepository;
+import shop.mtcoding.buyer.model.Purchase;
 import shop.mtcoding.buyer.model.PurchaseRepository;
 import shop.mtcoding.buyer.model.User;
 import shop.mtcoding.buyer.service.PurchaseService;
@@ -44,5 +52,18 @@ public class PurchaseController {
         }
 
         return "redirect:/";
+    }
+
+    @GetMapping("/purchase")
+    public String purchase(Model model) {
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+
+        List<PurchaseAllDto> purchaseList = purchaseRepository.findByUserId(principal.getId());
+
+        model.addAttribute("purchaseList", purchaseList);
+        return "purchase/list";
     }
 }
