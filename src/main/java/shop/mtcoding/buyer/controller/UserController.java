@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import shop.mtcoding.buyer.model.PurchaseRepository;
 import shop.mtcoding.buyer.model.User;
 import shop.mtcoding.buyer.model.UserRepository;
 
@@ -44,6 +43,18 @@ public class UserController {
 
     @GetMapping("/loginForm")
     public String loginForm() {
+        /*
+         * 
+         * Cookie[] cookies = request.getCookies();
+         * String username = "";
+         * for (Cookie cookie : cookies) {
+         * if (cookie.getName().equals("remember")) {
+         * username = cookie.getValue();
+         * break;
+         * }
+         * }
+         * request.setAttribute("remember", username);
+         */
         return "user/loginForm";
     }
 
