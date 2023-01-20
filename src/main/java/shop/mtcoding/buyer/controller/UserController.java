@@ -1,6 +1,7 @@
 package shop.mtcoding.buyer.controller;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -42,9 +43,8 @@ public class UserController {
     }
 
     @GetMapping("/loginForm")
-    public String loginForm() {
+    public String loginForm(HttpServletRequest request) {
         /*
-         * 
          * Cookie[] cookies = request.getCookies();
          * String username = "";
          * for (Cookie cookie : cookies) {
