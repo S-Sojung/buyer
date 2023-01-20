@@ -18,5 +18,4 @@ public interface ProductRepository {
 
     public int deleteById(int id);
 
-    public int updateByQty(@Param("id") int id, @Param("qty") int qty);
 }

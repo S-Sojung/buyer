@@ -24,8 +24,5 @@
     <update id="updateById" >
         update product_tb set name = #{name}, price = #{price}, qty = #{qty} where id = #{id} 
     </update>    
-    <update id = "updateByQty">
-        update product_tb set qty = #{qty} where id = #{id}
-    </update>
 
 </mapper>

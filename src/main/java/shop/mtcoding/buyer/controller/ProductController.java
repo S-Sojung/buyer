@@ -45,20 +45,4 @@ public class ProductController {
         }
     }
 
-    @PostMapping("/product/{id}/buy")
-    public String buy(@PathVariable int id, int count) {
-        Product product = productRepository.findById(id);
-        int qtyNum = product.getQty() - count;
-        int result = productRepository.updateByQty(id, qtyNum);
-
-        User user = (User) session.getAttribute("principal");
-        int result2 = purchaseRepository.insert(user.getId(), id, count);
-
-        if (result == 1 && result2 == 1) {
-            return "redirect:/product/";
-        } else {
-            return "redirect:/product/detail" + id;
-        }
-    }
-
 }
